@@ -1,0 +1,13 @@
+version: '2'
+services:
+   kaelly-portals:
+      image: kaellybot/kaelly-portals:TAG
+      container_name: Kaelly-portals
+      ports:
+      - "8080:8080"
+      environment:
+      - SPRING_DATA_MONGODB_HOST=
+      - SPRING_DATA_MONGODB_PORT=
+      - SPRING_DATA_MONGODB_USERNAME=
+      - SPRING_DATA_MONGODB_PASSWORD=
+      - SPRING_DATA_MONGODB_DATABASE=
