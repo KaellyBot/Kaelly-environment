@@ -1,0 +1,24 @@
+version: '2'
+services:
+   kaelly-core:
+      image: kaellybot/kaelly-core:TAG
+      container_name: Kaelly-core
+      ports:
+      - "8080:8080"
+      environment:
+      - DISCORD_TOKEN=
+      - SPRING_DATA_MONGODB_HOST=
+      - SPRING_DATA_MONGODB_PORT=
+      - SPRING_DATA_MONGODB_USERNAME=
+      - SPRING_DATA_MONGODB_PASSWORD=
+      - SPRING_DATA_MONGODB_DATABASE=
+      - KAELLY_PORTALS_URL=
+      - KAELLY_PORTALS_TOKEN=
+      - DOFUSROOM_URL=
+      - DOFUSROOM_ORGANIZATION=
+      - DOFUSROOM_TOKEN=
+      - ASSETS_DIRECTORY=./kaelly-core/assets
+      volumes:
+      - ./volume:/kaelly-core
+volumes:
+ kaelly-core:
