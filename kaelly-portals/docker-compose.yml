@@ -1,13 +1,24 @@
-version: '2'
+version: '3'
 services:
    kaelly-portals:
-      image: kaellybot/kaelly-portals:TAG
-      container_name: Kaelly-portals
+      image: 'kaellybot/kaelly-portals:TAG'
+      container_name: 'Kaelly-portals'
+      restart: always
       ports:
-      - "8080:8080"
+      - '8080:8080'
       environment:
       - SPRING_DATA_MONGODB_HOST=
       - SPRING_DATA_MONGODB_PORT=
       - SPRING_DATA_MONGODB_USERNAME=
       - SPRING_DATA_MONGODB_PASSWORD=
       - SPRING_DATA_MONGODB_DATABASE=
+   kaelly-portals-db:
+      image: 'mongo'
+      container_name: 'Kaelly-portals-db'
+      restart: always
+      environment:
+         - MONGO_INITDB_DATABASE=
+         - MONGO_INITDB_ROOT_USERNAME=
+         - MONGO_INITDB_ROOT_PASSWORD=
+      ports:
+         - '27017-27019:27017-27019'
